@@ -14,7 +14,7 @@ jobs:
       - name: Docker artifact build
         uses: actions/checkout@v4
       - name: Integrate
-        run: docker build -t acephish . && docker tag kishorekiku007/acephish && docker push kishorekiku007/acephish:latest
+        run: docker build -t acephish . && docker tag acephish kishorekiku007/acephish && docker push kishorekiku007/acephish:latest
   continuousDeployment:
     runs-on: ubuntu-latest
     needs: continuousIntegration
