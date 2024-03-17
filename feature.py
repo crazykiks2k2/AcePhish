@@ -13,7 +13,7 @@ from urllib.parse import urlparse
 
 class FeatureExtraction:
     features = []
-    def __init__(self,url):
+    def __init__(self, url):
         self.features = []
         self.url = url
         self.domain = ""
@@ -24,6 +24,7 @@ class FeatureExtraction:
 
         try:
             self.response = requests.get(url)
+            self.url = self.response.url
             self.soup = BeautifulSoup(response.text, 'html.parser')
         except:
             pass
